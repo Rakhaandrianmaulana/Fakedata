@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fake Data Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #4f46e5, #7c3aed);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4f46e5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-2xl mx-auto">
+        <div class="glassmorphism rounded-2xl p-6 md:p-8 shadow-2xl">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold tracking-tight">AI Fake Data Generator</h1>
+                <p class="text-gray-300 mt-2">Hasilkan data pribadi acak dengan bantuan AI.</p>
+            </div>
+
+            <!-- Input Form -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div>
+                    <label for="gender" class="block mb-2 text-sm font-medium text-gray-300">Gender</label>
+                    <select id="gender" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                        <option value="Pria">Pria</option>
+                        <option value="Wanita">Wanita</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="country" class="block mb-2 text-sm font-medium text-gray-300">Negara</label>
+                    <select id="country" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Singapore">Singapura</option>
+                        <option value="United States">Amerika Serikat</option>
+                    </select>
+                </div>
+                <div id="region-container">
+                    <label for="region" class="block mb-2 text-sm font-medium text-gray-300">Provinsi</label>
+                    <select id="region" class="bg-gray-700 border border-gray-600 text-white text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <div class="text-center">
+                <button id="generate-btn" class="btn-gradient text-white font-bold py-3 px-8 rounded-full shadow-lg w-full md:w-auto">
+                    Generate Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Display -->
+        <div id="result-container" class="mt-8 hidden">
+            <div class="glassmorphism rounded-2xl p-6 md:p-8">
+                <h2 class="text-2xl font-bold mb-4 text-center">Hasil Generate</h2>
+                <div id="loader" class="mx-auto loader my-8"></div>
+                <div id="data-output" class="space-y-3"></div>
+            </div>
+        </div>
+        
+        <!-- Toast Notification for Copy -->
+        <div id="toast" class="fixed bottom-5 right-5 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg transition-opacity duration-300 opacity-0">
+            Teks berhasil disalin!
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="27722772718197.js"></script>
+    <script src="function.js"></script>
+</body>
+</html>
